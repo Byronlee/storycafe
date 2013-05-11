@@ -1,0 +1,18 @@
+div.span2.slide-left
+  .side-iterations
+    .nav-iterations
+      span Iterations
+    .all-iterations
+      - if resource
+        ul.span12
+          -  resource.each do |s|
+            - if current_group && current_group.id ==="#{s.id}"
+              li.active
+                = link_to s.title ,edit_group_path(s) , :method => :get
+            -else
+              li
+                = link_to s.title ,edit_group_path(s) , :method => :get
+  .side-participants
+    .nav-participants
+      span Participants
+    .all-participants

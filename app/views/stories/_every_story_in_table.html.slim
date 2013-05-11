@@ -1,0 +1,18 @@
+- if current_story&&current_story.id ==="#{story.id}"
+  tr.active
+    td.span1.story-id
+      span.badge.badge-inverse = story.list_id
+    td.span2 = get_user_name_by_user_id(story.user_id)
+    td.span8 = link_to story.title ,edit_story_path(story) ,:remote => true, :method => :get,:class=> "every-story"
+    td.span1
+      = link_to_if((story.current_status != "finished") , button_tag("", :type => 'button',  :class =>"icon-fast-forward change_status"),"/stories/change_status?story_id=#{story.id}&next_status=#{story.next_status}",:class =>"change_status_icon",:title =>"标记进入#{story.next_status}状态", :remote => true , :attr_next_status => story.next_status ) do  content_tag(:span,"" ,:class=>"icon-lock") end
+
+- else
+  tr
+    td.span1.test_id
+      span.badge = story.list_id
+    td.span2 = get_user_name_by_user_id(story.user_id)
+    td.span8 = link_to story.title ,edit_story_path(story) ,:remote => true, :method => :get,:class=> "every-story"
+
+    td.span1
+      = link_to_if((story.current_status != "finished") , button_tag("", :type => 'button',  :class =>"icon-fast-forward change_status"),"/stories/change_status?story_id=#{story.id}&next_status=#{story.next_status}",:class =>"change_status_icon",:title =>"标记进入#{story.next_status}状态", :remote => true , :attr_next_status => story.next_status ) do  content_tag(:span,"" ,:class=>"icon-lock") end

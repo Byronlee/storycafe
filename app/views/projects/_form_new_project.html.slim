@@ -1,0 +1,17 @@
+ul class="dropdown-menu"
+  li
+    a href="#" 动作1
+  li
+    a href="#" 动作2
+  li
+    a href="#" 动作3
+  li class="divider"
+  li
+    a href="#project_modal" data-toggle="modal" new project
+  li
+    a href="#group_modal" data-toggle="modal" new iteration
+  li
+    a href="#participant_modal" data-toggle="modal" new participant 
+= render "projects/new_project_modal"
+= render "groups/new_group_modal"
+= render "users/new_participant_modal"

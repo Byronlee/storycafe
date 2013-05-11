@@ -1,0 +1,10 @@
+div( id="participant_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+   .modal-header
+     button( type="button" class="close" data-dismiss="modal" aria-hidden="true")×
+     h3#myModalLabel New participant
+   = form_for( Group.new ,:remote => true ) do |f|
+     .modal-body
+       = f.text_field :title , :placeholder => "please write group's name..."
+       = f.text_field :description ,  :placeholder => "please description you'r group"
+     .modal-footer
+       = f.submit  :class => "btn btn-primary"

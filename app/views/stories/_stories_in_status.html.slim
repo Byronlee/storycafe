@@ -1,0 +1,19 @@
+.content
+  - if resource && !resource.empty?
+    .span12.nav
+      h4
+        span.span1 = resource.length
+        span.span11 = get_story_status_title(type)
+    table.span12
+      - resource.each do |story|
+        = render "stories/every_story_in_table" , :story => story
+  - else
+    .span12.nav
+      h4
+        span.span1 = 0
+        span.span11 = get_story_status_title(type)
+    .no_content
+      .content
+        p
+          i.icon-pencil  There are no storys with status #{type} in this Iteration  ！
+          i.icon-edit    Fill in the blanks and click the new story button in the navigation bar.

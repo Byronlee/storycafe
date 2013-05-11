@@ -1,0 +1,67 @@
+doctype 5
+html
+  head
+    meta charset="UTF-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    title = t('title')
+    javascript:
+      var channel_path = "#{get_channel_path}"
+    link rel="author" href="#{root_url.html_safe}readme.txt"
+    meta name="author" content="Byronlee and simlegate"
+    = stylesheet_link_tag  :application, :recursive => true
+    = javascript_include_tag :application,:recursive => true
+    = csrf_meta_tags
+    = subscribe_to get_channel_path
+  body
+    - unless current_user
+      .preimage
+        img(src="/assets/pre_imge.jpeg")
+    .navbar-inverse.navbar
+      .navbar-inner
+        - if current_user
+          ul.nav.pull-left
+            li
+              a.brand.span2(class="dropdown-toggle" data-toggle="dropdown" href="#project_list")
+                = current_project.name
+                b(class="caret" style="float:right")
+              = render "projects/form_new_project"
+          div.nav-collapse
+            ul.nav
+              li
+                = render "public/close_nav"
+              li.divider-vertical
+              li
+                 = render "stories/form_new_story"
+            ul.nav.pull-right
+              li.divider-vertical
+              li
+                a class="dropdown-toggle" data-toggle="dropdown" href="#menutest1"
+                  = current_user.email if current_user
+                  b.caret
+                = render 'users/user_bar'
+              li
+                a class="dropdown-toggle" data-toggle="dropdown" href="#menutest1"
+                  | message
+                  b.caret
+                = render "public/message_show"
+              li.active
+                a.brand = t('title')
+        - else
+           a.brand(style="color:#fff") = t('title')
+           a#explorer
+             'Explorer
+             img(src="/assets/up.png")
+    - if current_user
+      .container-fluid
+        .row-fluid
+          = yield
+    - else
+      .container-fluid.no_login_content
+        .row-fluid
+          .message
+            .login
+              - if notice
+                p.notice = notice
+              - if alert
+                p.alert = alert
+              = yield

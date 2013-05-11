@@ -1,0 +1,258 @@
+
+@import "public.css.less" ;
+
+
+// all this is animat_nav css
+// ===============================
+// ===============================
+div[class=animat-nav]{
+  position: fixed;
+  background: #222;
+    span[class~=icon-arrow-up]{
+     margin-left: -10px;
+    }
+    span[class~=icon-arrow-left]{
+      float: left;
+      margin-top: 19px;
+    }
+}
+
+
+
+// all this is navbar css
+// ===============================
+// ===============================
+
+
+
+div[class~=navbar] {
+   .margin-bottom();
+   div[class=navbar-inner]{
+      .border-radius();
+      .padding-right();
+
+
+      // without user login
+      #explorer{
+          display: block;
+          width: 210px;
+          float:right;
+          margin: 10px 197px 5px 2px;
+          color: #aaa;
+          font-size: 27px;
+          text-align: left;
+          text-decoration: none;
+          img{
+            width:25px;
+            height:25px;
+          }
+      }
+       #explorer:hover{
+         color:#fff;
+         cursor:pointer;
+       }
+
+
+
+
+      // with uer logined
+       div[class=btn-group-vertical]{
+           span{
+              width:10px;
+              height: 18px;
+              background: #222;
+              float:right;
+            }
+           span[class~=icon-arrow-left]{
+              margin: 18px -10px 0px 0px;
+           }
+        }
+
+        img[class=show_form]{
+            max-width:29px;
+            margin-top: 6px;
+            cursor: pointer;
+            .float-left;
+            }
+        form{
+           .float-left;
+           .margin-left(15px);
+           .margin-bottom();
+           input[type=text]{
+              background-color: #bbb !important;
+               border:0px ;
+              .margin-bottom();
+               margin-top: 8px;
+
+           }
+
+           input[type=submit]{
+              background : url('/assets/publish.png');
+           }
+         }
+         a[class=brand]{
+            .margin-left(10px);
+         }
+
+     }
+}
+
+
+
+
+
+
+
+
+
+
+// all this is slide-left bar left  css
+// ===============================
+
+
+div[class~=slide-left] {
+  background:@side-left-middle-color ;
+
+  div[class|=side]{
+     div[class|=nav]{
+        background-color: @side-left-full-color;
+        line-height:30px;
+        font-weight:bold;
+        height: 30px;
+        overflow: hidden;
+        .padding-left(20px);
+
+        a[class|=icon]{
+            float: right;
+            margin-right: 15px;
+         }
+      }
+      div[class|=all]{
+        min-height :350px;
+        max-height : 50%;
+
+        ul{
+           li{
+             line-height:30px;
+             padding-left:10px;
+           }
+           li[class=active] , li:hover{
+              background-color:@block-table-tr-active-color;
+              a{
+                text-decoration: none;
+              }
+           }
+        }
+      }
+  }
+}
+
+
+
+
+// all this is slide-right bar right  css
+// ===============================
+.row-fluid .span10{
+    width: 100%-14.52991452991453% ;
+}
+
+
+div[class~=slide-right]{
+  .margin-left();
+
+  div[class^=block]{
+     float:left;
+     overflow-y:auto;
+     overflow-x:hidden;
+     div[class=content]{
+         div[class~=nav]{
+
+             background: @block-nav-background-color;
+             .padding-left(12px);
+            .margin-bottom();
+
+         }
+
+         div[class=no_content]{
+         float:left;
+
+          div[class=content]{
+             margin: 0 auto;
+             width: 87%;
+             padding-right: 10px;
+             padding-left: 10px;
+             margin-top:100px;
+             color: #999;font-size: 14px;
+             text-shadow: rgba(255, 255, 255, 0.6) 0px 1px 0px;background-color: #F8F8F8;
+             border-left: 3px solid #F6F6F6;
+             border-right: 3px solid #F6F6F6;
+            }
+         }
+         table{
+             .margin-left();
+             background-color:@block-table-background-color;
+
+             tr{
+                border-bottom: 1px solid @block-table-tr-active-color;
+                line-height:25px;
+               a{
+                  text-decoration: none;
+                  button[type=button]{
+                      border:0px;
+                      background:@block-table-background-color;
+                   }
+
+                }
+             }
+             tr[class=active] , tr:hover{
+
+                 background-color:@block-table-tr-active-color;
+                  button[type=button]{
+                    color: #08C;
+                    background:@block-table-tr-active-color;
+                  }
+           }
+           td[class=span8]{
+             a{
+                 display: inline-block;
+                 overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+             }
+
+           }
+         }
+
+
+         // here is story or group or todo  css
+
+         div[class=span12]{
+             .margin-left();
+             form{
+                  textarea{
+                  .border-radius();
+                   width:97%;
+                   resize: none;
+                   line-height:27px;
+                   border-style: hidden;
+                   background: url('/assets/t_bg.png');
+                   color: green;
+                   border-left: 1px solid #F1F1F1;
+                   }
+             }
+            span{
+                  line-height:30px;
+                  border-bottom: 1px solid @block-table-tr-active-color;
+                  color: #08C;
+              }
+          }
+
+
+
+
+     }
+
+
+  }
+
+}

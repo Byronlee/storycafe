@@ -1,0 +1,10 @@
+.content
+  .span12.nav
+    h4
+      span.icon-list.span1
+      span.span10 All TODO in this Iteration
+      span.span1.icon-cog
+  .span12
+    = form_for current_group ,:method =>"put",:remote => true,:html => {:id => "description_todo","data-type" => "json"} do |f|
+      textarea( placeholder="#{t('story.description')}" id="todo-description-areatext" name="group[todo]")
+        = current_group.todo

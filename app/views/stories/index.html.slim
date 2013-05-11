@@ -1,0 +1,14 @@
+= render "stories/group"   , :resource => current_groups
+.span10.slide-right
+  .block-stories-new
+    = render "stories/stories_in_status", :resource => current_storys[:new] , :type=> "new"
+  .block-stories-started
+    = render "stories/stories_in_status", :resource => current_storys[:started],:type=> "started"
+  .block-story-description
+    = render "stories/description" ,  :meta => { :type => "story"}
+  .block-stories-review
+    = render "stories/stories_in_status", :resource => current_storys[:review],:type=> "review"
+  .block-stories-finished
+    = render "stories/stories_in_status", :resource => current_storys[:finished],:type=> "finished"
+  .block-story-todo
+    = render "stories/todo"

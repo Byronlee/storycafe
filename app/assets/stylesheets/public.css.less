@@ -1,0 +1,99 @@
+
+/* this file where put some css or var in public, and any where can you it */
+
+/**=============================================
+ *
+ *        All css var in this project
+ * ========================================
+ */
+
+
+
+ // slide-left var
+
+ @side-left-full-color:          #666 ;
+ @side-left-middle-color:       @side-left-full-color*2;
+
+
+ // slide-right var
+
+
+ @block-nav-background-color:   @side-left-middle-color;
+ @block-table-background-color: #fff;
+ @block-table-tr-active-color:   #e6e6e6;
+
+
+/**=============================================
+ *
+ *        All public function in  this project
+ * ============================================
+ */
+
+
+.border-radius(@radius: 0px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+.margin-bottom(@var: 0px){
+   margin-bottom:@var;
+}
+
+.padding-left(@var: 0px){
+  padding-left:@var;
+}
+
+.padding-right(@var: 0px){
+  padding-right:@var;
+}
+
+.margin-left(@left: 0px){
+  margin-left:@left !important;
+}
+
+.float-left{
+  float: left;
+}
+
+
+
+
+// this glob css
+//======================================
+
+div[class=container-fluid]{
+  .padding-left();
+  .padding-right();
+
+}
+
+
+
+.row-fluid .span1 {
+  width: 3.982906%;
+}
+div[class=preimage]{
+  img{
+   width:100%;
+  }
+
+}
+
+body{
+  overflow: hidden;  
+}
+div[class=login]{
+    margin: 0 auto;
+    margin-top:50px;
+    text-align:center;
+    width: 400px;
+    border:10px solid #ddd
+}
+.table-condensed_story tr:hover ,#group_list tr:hover , .resource_active  {
+  background-color: #e6e6e6
+}

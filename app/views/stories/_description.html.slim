@@ -1,0 +1,47 @@
+.content
+  - if meta[:type]=="group"
+    - if current_group
+      .span12.nav
+        h4
+          span.icon-th.span1
+          span.span10 = current_group.title
+          span.span1.icon-cog
+      .span12
+        = form_for current_group ,:method =>"put",:remote => true,:html => {:id => "description_todo","data-type" => "json"} do |f|
+          textarea( placeholder="#{t('story.description')}" id="todo-description-areatext" name="group[description]")
+            = current_group.description
+        .span12
+          i.span5.icon-user  Byronlee
+        .span12
+          i.span7.icon-calendar =  current_group.created_at
+  - else
+   - if current_story
+     .span12.nav
+        h4
+          span.icon-th.span1
+          span.span10 = current_story.title
+          span.span1.icon-cog
+     .row-fluid
+       .span12
+         .row-fluid
+           .span12
+             = form_for current_story , :method =>"put", :remote => true ,:html => {:id => "description_todo",:'data-type' => "json"} do |f|
+                 textarea( placeholder="#{t('story.description')}" id="todo-description-areatext" name="description" )
+                   =  current_story.description
+             .span12
+               i.span5.icon-user  Byronlee
+             .span12
+               i.span7.icon-flag  assigned to public
+             .span12
+               i.span7.icon-calendar = current_group.created_at
+   - else
+      .span12.nav
+        h4
+          span.icon-th.span1
+          span.span10 Please select one story or Iteration
+          span.span1.icon-cog
+      .no_content
+        .content
+          p
+            i.icon-pencil  There is no story or Iteration selected ！
+            i.icon-edit  Please select one story or Iteration, if has nothing, please new one which of them.

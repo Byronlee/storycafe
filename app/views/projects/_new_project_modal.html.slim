@@ -1,0 +1,9 @@
+div( id="project_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="project_ModalLabel" aria-hidden="true")
+  .modal-header
+    button( type="button" class="close" data-dismiss="modal" aria-hidden="true")×
+    h3#project_ModalLabel New project
+  = form_for( Project.new ,:remote => true,:html => {:'data-type' => "json"} ) do |f|
+    .modal-body
+      = f.text_field :name , :placeholder => "please write group's name..."
+    .modal-footer
+      = f.submit  :class => "btn btn-primary"
